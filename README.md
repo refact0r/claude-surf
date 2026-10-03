@@ -2,7 +2,7 @@
 
 play subway surfers in claude code.
 
-`/surf` opens the web version of the game in a headless chrome and draws it in a pane next to your chat. full color in ghostty or kitty, colored text everywhere else. `/surf <file or url>` plays a video instead.
+`/surf` opens the web version of the game in a headless chrome and draws it in a pane next to your chat. requires kitty graphics protocol for full res/color. `/surf <file or url>` plays a video instead.
 
 ## run
 
@@ -25,4 +25,4 @@ click the pane first (or ctrl+x tab).
 
 your progress is saved in `~/Library/Caches/claude-subway-surfer/chrome-profile`. nothing runs while the pane is closed.
 
-subway surfers belongs to sybo. this repo doesn't include the game, it just loads the official web version on poki.
+Subway Surfers belongs to SYBO. This repo does not contain the game, it loads the web version on Poki.
