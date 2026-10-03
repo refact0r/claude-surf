@@ -1,63 +1,28 @@
 # claude-surf
 
-A Claude Code mod that plays Subway Surfers in a pane next to your conversation.
+play subway surfers in claude code.
 
-`/surf` opens the web version of the game in a private headless Chrome and streams it into the
-terminal. In Ghostty or kitty the pane shows a real picture; elsewhere it falls back to colored
-text characters. `/surf <file or URL>` plays a video instead.
+`/surf` opens the web version of the game in a headless chrome and draws it in a pane next to your chat. full color in ghostty or kitty, colored text everywhere else. `/surf <file or url>` plays a video instead.
 
-## Requirements
-
-Tested on macOS with Claude Code 2.1.286. The mod API is early access and may change.
-
-- Node 22+
-- Chrome, Chromium, Brave or Edge
-- ffmpeg, only for videos
-- Ghostty or kitty for the picture views
-
-## Run
+## run
 
 ```sh
 git clone https://github.com/refact0r/claude-surf
 claude --plugin-dir ./claude-surf
 ```
 
-Then type `/surf`. `/surf stop` or `q` ends it.
+then type `/surf`. needs node 22+, chrome (or chromium, brave, edge), and ffmpeg for videos. only tested on macos with claude code 2.1.286.
 
-## Keys
+## keys
 
-Click the pane (or press ctrl+x tab) to give it the keyboard.
+click the pane first (or ctrl+x tab).
 
-| key | |
-| --- | --- |
-| `a` `d` | change lanes |
-| `w` `s` | jump, roll |
-| `e` | start / new round (sends space) |
-| `v` | view: full color, ascii, characters |
-| `q` | quit |
+- `a` `d` change lanes
+- `w` `s` jump, roll
+- `e` start / new round
+- `v` switch view (full color, ascii, text)
+- `q` quit
 
-## Options
+your progress is saved in `~/Library/Caches/claude-subway-surfer/chrome-profile`. nothing runs while the pane is closed.
 
-`url`, `style` (`ascii`, `blocks`, `braille`) and `sound` show up in `/config`.
-
-## How it works
-
-`bin/surf.mjs` drives Chrome over the DevTools protocol and takes its screencast frames. For the
-picture views it writes each frame to a raw RGB file that the terminal reads through the kitty
-graphics protocol: the frame itself in full color, or the frame redrawn as small ascii glyphs. The
-characters view sends a grid of terminal cells instead. Glyph art picks, for each cell, the glyph
-and the foreground and background colors that best match that patch of the frame.
-`hooks/register.tsx` is the pane, drawn with the mod API's `Image` and `Raster` elements.
-
-Game progress is kept in `~/Library/Caches/claude-subway-surfer/chrome-profile`, so you only see
-the tutorial once. Nothing runs while the pane is closed.
-
-## Tests
-
-```sh
-claude plugin validate .
-claude plugin test .
-```
-
-Subway Surfers belongs to SYBO. This repo contains none of the game; it loads the official web
-version on Poki.
+subway surfers belongs to sybo. this repo doesn't include the game, it just loads the official web version on poki.
