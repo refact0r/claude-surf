@@ -1,0 +1,31 @@
+{
+  "name": "subway-surfer",
+  "version": "0.1.0",
+  "description": "Play Subway Surfers (or watch any video) in a pane, rendered as glyphs with a foreground and a background color.",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "url": {
+      "type": "string",
+      "title": "Game page",
+      "description": "The page /surf opens when given no argument.",
+      "default": "https://poki.com/en/g/subway-surfers"
+    },
+    "style": {
+      "type": "string",
+      "title": "Glyphs",
+      "description": "The glyphs a frame is drawn with.",
+      "options": [
+        "ascii",
+        "blocks",
+        "braille"
+      ],
+      "default": "ascii"
+    },
+    "sound": {
+      "type": "boolean",
+      "title": "Sound",
+      "description": "Play the game's or the video's sound.",
+      "default": true
+    }
+  }
+}
