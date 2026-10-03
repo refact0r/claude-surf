@@ -2,7 +2,7 @@
 
 play subway surfers in claude code.
 
-https://github.com/user-attachments/assets/c3255733-d792-4186-a759-73c2a34e0f6a
+<img alt="Screenshot 2026-10-02 at 8 08 21 PM" src="https://github.com/user-attachments/assets/0a1d45d3-c276-43dd-82d6-1ae10b7aac63" />
 
 `/surf` opens the web version of the game in a headless chrome and draws it in a pane next to your chat. requires kitty graphics protocol for full res/color. `/surf <file or url>` plays a video instead.
 
