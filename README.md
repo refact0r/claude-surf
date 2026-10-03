@@ -1,4 +1,4 @@
-# subway-surfer
+# claude-surf
 
 A Claude Code mod that plays Subway Surfers in a pane next to your conversation.
 
@@ -18,8 +18,8 @@ Tested on macOS with Claude Code 2.1.286. The mod API is early access and may ch
 ## Run
 
 ```sh
-git clone <this repo>
-claude --plugin-dir ./subway-surfer
+git clone https://github.com/refact0r/claude-surf
+claude --plugin-dir ./claude-surf
 ```
 
 Then type `/surf`. `/surf stop` or `q` ends it.
